@@ -26,15 +26,19 @@ Whether to allow inline scripting against ElasticSearch. You should read the fol
 
     elasticsearch_java_home:
 
-Path to Java if java is not globally installed.
+Path to Java, if java is not globally installed.
 
     elasticsearch_other_settings:
 
 Additional settings (dictionary) injected to `elasticsearch.yml`
 
+    elasticsearch_data_path:
+
+Alternate data path, if defined.
+
 ## Dependencies
 
-  - geerlingguy.java
+None. Java should be installed and if not in path `elasticsearch_java_home` should be set.
 
 ## Example Playbook
 
