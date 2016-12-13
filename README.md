@@ -24,6 +24,14 @@ The port to listen for HTTP connections on.
 
 Whether to allow inline scripting against ElasticSearch. You should read the following link as there are possible security implications for enabling these options: [Enable Dynamic Scripting](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting.html#enable-dynamic-scripting). Available options include: `true`, `false`, and `sandbox`.
 
+    elasticsearch_java_home:
+
+Path to Java if java is not globally installed.
+
+    elasticsearch_other_settings:
+
+Additional settings (dictionary) injected to `elasticsearch.yml`
+
 ## Dependencies
 
   - geerlingguy.java

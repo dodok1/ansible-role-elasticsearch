@@ -14,6 +14,16 @@
     mode: 0750
   notify: restart elasticsearch
 
+- name: Configure JAVA_HOME
+  become: true
+  lineinfile:
+    dest: '{{ elasticsearch_env_path }}'
+    regexp: '^JAVA_HOME='
+    line: 'JAVA_HOME={{ elasticsearch_java_home }}'
+    state: present
+  notify: restart elasticsearch
+  when: elasticsearch_java_home is defined
+
 - name: Start Elasticsearch.
   service: name=elasticsearch state=started enabled=yes
 

@@ -12,3 +12,7 @@
 
 - name: Install Elasticsearch.
   apt: pkg=elasticsearch state=present
+
+- name: Provide path to environment file
+  set_fact:
+    elasticsearch_env_path: /etc/sysconfig/elasticsearch

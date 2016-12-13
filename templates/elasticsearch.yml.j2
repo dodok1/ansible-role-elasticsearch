@@ -95,3 +95,10 @@ http.port: {{ elasticsearch_http_port }}
 # action.destructive_requires_name: true
 script.inline: {{ elasticsearch_script_inline }}
 script.indexed: {{ elasticsearch_script_indexed }}
+
+{% if elasticsearch_other_settings is defined %}
+# additional directives
+{% for key, value in elasticsearch_other_settings.items() %}
+{{ key }}: {{ value }}
+{% endfor %}
+{% endif %}
